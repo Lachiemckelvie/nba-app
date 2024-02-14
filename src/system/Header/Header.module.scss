@@ -1,0 +1,53 @@
+$headerHeight: 50px;
+
+.header {
+    background: var(--grey-100);
+    height: $headerHeight;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+
+    .logoWrapper {
+        position: relative;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -30px;
+            top: auto;
+            width: calc(100% + $headerHeight);
+            background: var(--red-100);
+            transform: skew(-25deg, 0);
+            height: $headerHeight;
+            z-index: 2;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: -30px;
+            top: auto;
+            width: calc(100% + 60px);
+            background: var(--red-120);
+            transform: skew(-25deg,0);
+            height: $headerHeight;
+            z-index: 1;
+        }
+
+        .logo {
+            width: 80px;
+            position: relative;
+            z-index: 3;
+        }
+    }
+
+
+    button {
+        margin-left: 10px;
+        display: flex;
+    }
+}
